@@ -1,0 +1,16 @@
+<div class="card-columns">
+
+  <div class="card" *ngFor="let i of users">
+    <img [src]="i.avatar" class="card-img-top" [alt]="i.first_name">
+    <div class="card-body">
+      <h5 class="card-title">{{ i.first_name }} {{ i.last_name }}</h5>
+      <h6 class="card-subtitle mb-2">{{ i.email }}</h6>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.</p>
+      <p class="card-text">
+        <span class="text-muted">ID: {{ i.id }}</span>
+      </p>
+    </div>
+  </div>
+
+</div>
