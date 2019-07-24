@@ -18,7 +18,17 @@ export class UserService {
   ) { }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.url}/users?per_page=6`).pipe(map((resp: any) => resp.data));
+    return this.http.get<User[]>(`${this.url}/users?per_page=6&delay=2`)
+      .pipe(
+        map((resp: any) => resp.data)
+      );
+  }
+
+  getUser(id: string): Observable<User> {
+    return this.http.get<User>(`${this.url}/users/${id}?delay=2`)
+      .pipe(
+        map((resp: any) => resp.data)
+      );
   }
 
 }
